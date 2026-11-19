@@ -1,0 +1,7 @@
+Los QR de esta carpeta llevan a:
+
+  https://mariofdez86-hue.github.io/raiz-y-veta/
+
+Si cambias de dirección (por ejemplo a un dominio propio), hay que volver
+a generar los QR O dejar en la dirección de arriba una página que reenvíe
+a la nueva. Lo segundo es mejor: las pegatinas ya pegadas siguen valiendo.

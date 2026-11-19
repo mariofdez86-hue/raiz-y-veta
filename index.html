@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raíz y Veta — Mesas de un solo tablón, con canto vivo</title>
+<meta name="description" content="Taller de madera artesanal: mesas de comedor de un solo tablón con canto vivo, mesas de centro de tronco y taburetes de rodaja. Base de madera o de hierro, a tu medida. Pide por WhatsApp.">
+<meta name="theme-color" content="#190f09">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raíz y Veta — Mesas de un solo tablón, con canto vivo">
+<meta property="og:description" content="Mesas de un solo tablón con su canto vivo, mesas de centro de tronco y taburetes de rodaja. Hechas a mano y a medida.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="img/icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Archivo:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<a class="oculto-visual" href="#catalogo">Saltar al catálogo</a>
+
+<header class="cabecera">
+  <a class="marca" href="#arriba">
+    <span data-c="nombre">Raíz y Veta</span>
+    <small data-c="oficio">Taller de madera artesanal</small>
+  </a>
+  <nav class="menu" aria-label="Apartados de la página">
+    <a href="#trabajos">Trabajos</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#proceso">Cómo se hace</a>
+    <a href="#medida">A medida</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="boton-carrito" id="boton-carrito" data-vacio="si" aria-label="Ver el pedido, vacío">
+    Pedido <span class="cuenta" id="cuenta-carrito">0</span>
+  </button>
+</header>
+
+<!-- ===================== La mesa que gira ===================== -->
+
+<section class="escena" id="escena">
+  <div class="escena-fija" id="arriba">
+    <canvas id="lienzo" aria-hidden="true"></canvas>
+
+    <!-- Si el móvil no puede con el 3D, se ve este dibujo -->
+    <div class="sin-3d">
+      <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dibujo de una mesa de caballete de madera maciza">
+        <g fill="none" stroke="#c99458" stroke-width="2.4" stroke-linejoin="round">
+          <path d="M22 88c40-7 72 5 114 1s78-11 122-7 90 10 140 4v24c-50 7-96 1-140-3s-80 3-122 7-74-8-114-1z"/>
+        </g>
+        <g fill="none" stroke="#9aa1a6" stroke-width="2.4" stroke-linejoin="round">
+          <path d="M96 113h22v92H96z"/>
+          <path d="M302 113h22v92h-22z"/>
+          <path d="M70 205h74M278 205h74"/>
+        </g>
+        <g stroke="#8d969c" stroke-width="1" opacity="0.75">
+          <path d="M20 68h380M20 60v16M400 60v16"/>
+        </g>
+        <text x="210" y="54" fill="#8d969c" font-family="Archivo, sans-serif" font-size="11" text-anchor="middle">180 cm</text>
+      </svg>
+    </div>
+
+    <div class="rotulo-escena">
+      <h1>Mesas de un solo tablón, con su canto vivo</h1>
+      <p class="entradilla">El tablero es una pieza, no listones pegados: el ancho de la mesa es el ancho que tenía el árbol. Base de madera maciza o de hierro negro, hecha a tu medida.</p>
+    </div>
+
+    <div class="pistas" aria-hidden="false">
+      <div class="pista">
+        <p class="cota"><span>tablón de 60 mm</span><i></i></p>
+        <h2>Un árbol, una mesa</h2>
+        <p>Maciza de parte a parte y sin juntas por medio. Por eso no hay dos iguales: cada mesa tiene la forma, el ancho y la veta del tronco del que salió.</p>
+      </div>
+      <div class="pista">
+        <p class="cota"><span>canto vivo</span><i></i></p>
+        <h2>El borde se queda como estaba</h2>
+        <p>No se recorta en recto para que parezca de fábrica. Se limpia, se estabiliza y, si trae grieta o hueco, se rellena con resina transparente para que quede sano.</p>
+      </div>
+      <div class="pista">
+        <p class="cota"><span>aceite, no barniz</span><i></i></p>
+        <h2>Acabado al aceite, no al plástico</h2>
+        <p>Aceite natural, nunca barniz. Se puede comer encima, se arregla en casa con un trapo y la madera sigue respirando en vez de quedar sellada en plástico.</p>
+      </div>
+    </div>
+
+    <p class="flecha-baja">sigue bajando</p>
+  </div>
+</section>
+
+<!-- ===================== Trabajos ===================== -->
+
+<section class="apartado" id="trabajos">
+  <div class="contenedor">
+    <p class="cota cota-apartado"><span>trabajos hechos</span><i></i></p>
+    <div class="rejilla-titulo">
+      <h2>Lo que ha salido del taller</h2>
+      <p class="entradilla">Encargos ya entregados. Ninguno es igual a otro, porque ningún tablón es igual a otro.</p>
+    </div>
+    <div class="galeria" id="rejilla-galeria"></div>
+  </div>
+</section>
+
+<!-- ===================== Catálogo ===================== -->
+
+<section class="apartado" id="catalogo">
+  <div class="contenedor">
+    <p class="cota cota-apartado"><span>en el taller ahora</span><i></i></p>
+    <div class="rejilla-titulo">
+      <h2>Mesas</h2>
+      <p class="aviso-precio">Los precios son orientativos y llevan el acabado puesto. El final depende de la madera que haya y de las medidas; se habla por WhatsApp antes de empezar nada.</p>
+    </div>
+    <div class="piezas" id="rejilla-mesas"></div>
+
+    <div class="rejilla-titulo" style="margin-top:clamp(3.5rem,8vh,6rem)">
+      <h2>Objetos de madera</h2>
+      <p class="aviso-precio">Lo pequeño sale del recorte de las mesas: tablas, fuentes, cuencos. Se puede llevar en mano el mismo día.</p>
+    </div>
+    <div class="piezas" id="rejilla-objetos"></div>
+  </div>
+</section>
+
+<!-- ===================== Cómo se hace (sí es una secuencia) ===================== -->
+
+<section class="apartado apartado-claro" id="proceso">
+  <div class="contenedor">
+    <p class="cota cota-apartado"><span>del tronco a tu cocina</span><i></i></p>
+    <div class="rejilla-titulo">
+      <h2>Cuatro pasos y unas cuantas semanas</h2>
+      <p class="entradilla">Una mesa no se hace en una tarde. Esto es todo lo que pasa desde que se elige la madera hasta que se monta en tu casa.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <p class="cifra">1</p><div class="regla"></div>
+        <h3>Elegir el tronco</h3>
+        <p>Se busca la pieza en el aserradero y se corta entera. El ancho del árbol manda: él decide de cuánto puede ser la mesa.</p>
+      </div>
+      <div class="paso">
+        <p class="cifra">2</p><div class="regla"></div>
+        <h3>Secar sin prisa</h3>
+        <p>Un tablón así tarda meses en secar. Si se trabaja antes de tiempo, la mesa se tuerce o se abre al segundo invierno.</p>
+      </div>
+      <div class="paso">
+        <p class="cifra">3</p><div class="regla"></div>
+        <h3>Sanear y rellenar</h3>
+        <p>Se limpia la corteza, se cosen las grietas y los huecos se rellenan con resina transparente. Luego se calibra hasta dejarlo plano.</p>
+      </div>
+      <div class="paso">
+        <p class="cifra">4</p><div class="regla"></div>
+        <h3>Lijar y aceitar</h3>
+        <p>Tres lijados, del gordo al fino, y dos o tres capas de aceite con su espera entre una y otra. La base, de madera o de hierro, se monta al final.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== A medida ===================== -->
+
+<section class="apartado" id="medida">
+  <div class="contenedor">
+    <p class="cota cota-apartado"><span>encargos</span><i></i></p>
+    <div class="medida-partida">
+      <div>
+        <h2>¿La quieres de tres metros y con pata de hierro?</h2>
+        <p class="entradilla" style="margin-top:1rem">Se hace. Cuéntame el hueco que tienes que llenar y te digo qué tablón hay en el taller para eso, cuánto cuesta y para cuándo está. Sin compromiso y sin letra pequeña.</p>
+        <ul class="lista-pelada" style="margin-top:2rem">
+          <li><b>Presupuesto en 48 horas</b><span>Con el precio cerrado por escrito, no «sobre unos mil euros».</span></li>
+          <li><b>Plazo honrado</b><span>De tres a seis semanas según la pieza y la madera que haya seca.</span></li>
+          <li><b>Entrega y montaje</b><span data-c="zona">Entrega y montaje en la provincia</span></li>
+          <li><b>Se repara</b><span>Si dentro de unos años se marca o se afloja, vuelve al taller y se arregla.</span></li>
+        </ul>
+      </div>
+      <form class="formulario" id="form-medida">
+        <div class="campo">
+          <label for="que">Qué necesitas</label>
+          <input id="que" name="que" required placeholder="Una mesa de comedor para diez">
+        </div>
+        <div class="dos-campos">
+          <div class="campo">
+            <label for="medidas">Medidas o el hueco que tienes</label>
+            <input id="medidas" name="medidas" placeholder="260 × 110 cm">
+          </div>
+          <div class="campo">
+            <label for="base">Base</label>
+            <select id="base" name="base">
+              <option value="">Aconsejadme vosotros</option>
+              <option>De madera maciza</option>
+              <option>De hierro negro</option>
+              <option>Tronco o cepa entera</option>
+            </select>
+          </div>
+        </div>
+        <div class="dos-campos">
+          <div class="campo">
+            <label for="cuando">Para cuándo</label>
+            <input id="cuando" name="cuando" placeholder="Sin prisa / antes de Navidad">
+          </div>
+          <div class="campo">
+            <label for="pueblo">Tu pueblo</label>
+            <input id="pueblo" name="pueblo" placeholder="Para saber si llego a montarla">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="mas">Algo más que deba saber</label>
+          <textarea id="mas" name="mas" placeholder="Tengo una radiador justo detrás, el pasillo mide 80 cm..."></textarea>
+        </div>
+        <button class="btn btn-wa btn-grande" type="submit">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 1.67c4.55 0 8.25 3.7 8.25 8.24 0 4.55-3.7 8.24-8.25 8.24-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.28-8.24m-3.6 4.1c-.17 0-.45.06-.69.31-.23.25-.9.88-.9 2.13s.92 2.47 1.04 2.64c.13.17 1.77 2.82 4.37 3.84 2.16.85 2.6.68 3.07.64.47-.04 1.5-.61 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.11-.23-.17-.47-.29-.25-.12-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.12-.17.26-.66.84-.81 1.01-.15.17-.3.19-.55.07-.25-.13-1.06-.39-2.02-1.25-.75-.66-1.26-1.49-1.4-1.74-.15-.25-.02-.39.1-.51.11-.12.25-.3.38-.45.12-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.12-.56-1.37-.77-1.87-.2-.47-.4-.41-.56-.41Z"/></svg>
+          Pedir presupuesto por WhatsApp
+        </button>
+        <p class="letra-chica">Se abre WhatsApp con el mensaje ya escrito. Lo lees, lo cambias si quieres y le das a enviar.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Contacto ===================== -->
+
+<section class="apartado contacto" id="contacto">
+  <div class="contenedor">
+    <p class="cota cota-apartado"><span>hablamos</span><i></i></p>
+    <div class="contacto-rejilla">
+      <div>
+        <h2>El taller está abierto</h2>
+        <p class="entradilla" style="margin-top:1rem">Pásate a ver la madera y a tocar los acabados, que en foto no se nota el tacto. Mejor avisa antes por WhatsApp, que a veces estoy montando fuera.</p>
+        <p style="margin-top:1.8rem">
+          <a class="btn btn-wa btn-grande" data-wa-texto="Hola, os escribo desde la web. Quería preguntaros una cosa:" href="#">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 1.67c4.55 0 8.25 3.7 8.25 8.24 0 4.55-3.7 8.24-8.25 8.24-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.28-8.24m-3.6 4.1c-.17 0-.45.06-.69.31-.23.25-.9.88-.9 2.13s.92 2.47 1.04 2.64c.13.17 1.77 2.82 4.37 3.84 2.16.85 2.6.68 3.07.64.47-.04 1.5-.61 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.11-.23-.17-.47-.29-.25-.12-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.12-.17.26-.66.84-.81 1.01-.15.17-.3.19-.55.07-.25-.13-1.06-.39-2.02-1.25-.75-.66-1.26-1.49-1.4-1.74-.15-.25-.02-.39.1-.51.11-.12.25-.3.38-.45.12-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.12-.56-1.37-.77-1.87-.2-.47-.4-.41-.56-.41Z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </p>
+        <div class="datos-taller">
+          <div><b>Taller</b><span data-c="taller">Tu calle, 00 · Tu pueblo</span></div>
+          <div><b>Horario</b><span data-c="horario">De lunes a viernes, de 9 a 14 y de 16 a 19.</span></div>
+          <div><b>Teléfono</b><span data-c="whatsappBonito">+34 600 00 00 00</span></div>
+          <div><b>También estoy en</b><span>
+            <a id="enlace-facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+            <a id="enlace-instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+          </span></div>
+        </div>
+      </div>
+      <div class="tarjeta-qr">
+        <img src="qr/qr.svg" alt="Código QR que abre esta misma web" width="160" height="160">
+        <div>
+          <h3>Llévate la web en el móvil</h3>
+          <p class="letra-chica" style="margin-top:.5rem">Si estás mirando esto en el ordenador, apunta con la cámara del móvil y la tienes en la mano para enseñársela a quien decide contigo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie-pagina">
+  <span>© <span data-c="nombre">Raíz y Veta</span>. Madera maciza, hecha a mano.</span>
+  <span data-c="zona">Entrega y montaje en la provincia</span>
+  <a data-wa-texto="Hola, os escribo desde la web." href="#">WhatsApp</a>
+</footer>
+
+<a class="flotante" data-wa-texto="Hola, os escribo desde la web. Quería preguntaros una cosa:" href="#" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 1.67c4.55 0 8.25 3.7 8.25 8.24 0 4.55-3.7 8.24-8.25 8.24-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.28-8.24m-3.6 4.1c-.17 0-.45.06-.69.31-.23.25-.9.88-.9 2.13s.92 2.47 1.04 2.64c.13.17 1.77 2.82 4.37 3.84 2.16.85 2.6.68 3.07.64.47-.04 1.5-.61 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.11-.23-.17-.47-.29-.25-.12-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.12-.17.26-.66.84-.81 1.01-.15.17-.3.19-.55.07-.25-.13-1.06-.39-2.02-1.25-.75-.66-1.26-1.49-1.4-1.74-.15-.25-.02-.39.1-.51.11-.12.25-.3.38-.45.12-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.12-.56-1.37-.77-1.87-.2-.47-.4-.41-.56-.41Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<!-- ===================== El pedido ===================== -->
+
+<dialog id="carrito" aria-labelledby="titulo-carrito">
+  <div class="cajon">
+    <div class="cajon-cabeza">
+      <h2 id="titulo-carrito">Tu pedido</h2>
+      <button class="cerrar" id="cerrar-carrito" aria-label="Cerrar el pedido">✕</button>
+    </div>
+    <div class="cajon-lista" id="lista-carrito"></div>
+    <div class="cajon-pie">
+      <div class="campo">
+        <label for="notas-pedido">Notas para el taller</label>
+        <textarea id="notas-pedido" placeholder="Me corre prisa, vivo en un tercero sin ascensor, quiero el acabado más oscuro..."></textarea>
+      </div>
+      <p class="total"><span>Total orientativo</span><b id="total-carrito">0 €</b></p>
+      <button class="btn btn-wa btn-grande" id="enviar-pedido" disabled>Enviar el pedido por WhatsApp</button>
+      <button class="quitar" id="vaciar-carrito" style="justify-self:start">Vaciar el pedido</button>
+      <p class="letra-chica">No se paga aquí. Se abre WhatsApp con el pedido escrito; en la conversación se cierra el precio final, el plazo y cómo pagar.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="visor" aria-label="Foto ampliada">
+  <div class="visor">
+    <img id="visor-img" src="" alt="">
+    <p id="visor-pie"></p>
+  </div>
+</dialog>
+
+<p class="aviso-flotante" id="aviso" role="status" aria-live="polite"></p>
+
+<script src="js/config.js"></script>
+<script src="js/datos.js"></script>
+<script defer src="js/app.js"></script>
+<script type="module" src="js/mesa3d.js"></script>
+</body>
+</html>
