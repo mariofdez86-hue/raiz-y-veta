@@ -143,3 +143,21 @@ npx esbuild js/mesa3d.fuente.js --bundle --minify --format=esm --outfile=js/mesa
   viejos sale un dibujo de la mesa en su lugar y la web funciona igual.
 - **Quien tenga las animaciones desactivadas** en su móvil ve la página entera
   sin que nada se mueva, con todos los textos a la vista.
+
+---
+
+## 8. La skill Hallmark
+
+En `.claude/skills/hallmark/` está [Hallmark](https://github.com/Nutlope/hallmark), una
+skill de diseño para agentes de código: 50 temas, reglas de maquetación y un linter
+(`sloplint`) que revisa la página en un navegador de verdad antes de darla por buena.
+
+Está puesta ahí a propósito, no es basura del proyecto: cualquier sesión de Claude que
+abra este repositorio la carga sola, sin instalar nada. Para usarla se le pide por su
+nombre, por ejemplo `/hallmark redesign index.html`. Por su cuenta no toca nada: la
+propia skill dice que no se mete en un diseño que ya existe salvo que la llames.
+
+No afecta a la web publicada. GitHub Pages no sirve las carpetas que empiezan por punto,
+así que esos archivos no se descargan cuando alguien entra en la página.
+
+Versión 2.0.0, licencia MIT.
