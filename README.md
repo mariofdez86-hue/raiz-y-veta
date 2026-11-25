@@ -55,12 +55,26 @@ arriba. Cuantas más mesas distintas, mejor: es lo que más vende.
 
 Todo está en `js/datos.js`. Cada pieza es un bloque entre llaves `{ }`.
 
-- **Cambiar un precio:** busca `precio: 890` y pon el tuyo.
+- **Cambiar un precio:** busca `precio: 2400` y pon el tuyo.
 - **Añadir una medida:** copia una línea de `medidas` y cámbiale la etiqueta
   y el precio. El precio de la ficha cambia solo según lo que elija el cliente.
 - **Añadir una pieza:** copia un bloque entero, pégalo debajo y cámbiale los
   datos. Ojo con dejar la coma entre bloque y bloque.
 - **Quitar una pieza:** borra su bloque entero, de `{` a `},`.
+
+### Las categorías del catálogo
+
+Arriba del todo de `datos.js` está la lista `CATEGORIAS`: son los apartados del
+catálogo (Mesas, Sofás y mecedoras, Dormitorio, Objetos), en el orden en que
+salen en la página. Cada pieza lleva una línea `categoria:` con el id de su
+apartado.
+
+- **Añadir un apartado** (por ejemplo «Escritorios»): copia un bloque de
+  `CATEGORIAS`, ponle un `id` nuevo sin espacios ni tildes, su título y su
+  nota; luego pon ese mismo id en el `categoria:` de las piezas que vayan ahí.
+- **Cambiar el orden:** mueve los bloques de `CATEGORIAS` de sitio.
+- Un apartado que se quede sin piezas **no sale** en la web, así que puedes
+  dejarlo preparado hasta que tengas fotos.
 
 Los precios de ahora son **de ejemplo**. Pon los tuyos antes de publicar.
 

@@ -1,23 +1,49 @@
 /* ============================================================
    EL CATÁLOGO
    ============================================================
-   Cada pieza es un bloque entre { }. Para añadir una, copia un
-   bloque entero, pégalo debajo y cámbiale los datos. Ojo con
-   dejar la coma al final de cada bloque.
+   Hay dos listas: las CATEGORÍAS (los apartados del catálogo,
+   en el orden en que salen) y los ARTÍCULOS (las piezas).
 
-   tipo:     'mesa' o 'objeto'  (manda a qué apartado va)
-   foto:     nombre del archivo dentro de la carpeta img/
-   medidas:  una o varias; cada medida puede tener su precio
-   precios:  en euros, sin símbolo.
+   Cada pieza lleva "categoria:" con el id de su apartado. Si
+   una categoría se queda sin piezas, no sale en la web.
 
-   >>> LOS PRECIOS DE AHORA SON UN EJEMPLO. PON LOS TUYOS. <<<
+   Para añadir una pieza: copia un bloque entero entre { },
+   pégalo debajo y cámbiale los datos. Ojo con dejar la coma
+   al final de cada bloque.
+
+   >>> LOS PRECIOS SON DE EJEMPLO. PON LOS TUYOS. <<<
    ============================================================ */
+
+window.CATEGORIAS = [
+  {
+    id: 'mesas',
+    titulo: 'Mesas',
+    nota: 'Los precios son orientativos y llevan el acabado puesto. El final depende del tablón que haya y de las medidas; se habla por WhatsApp antes de empezar nada.'
+  },
+  {
+    id: 'asientos',
+    titulo: 'Sofás y mecedoras',
+    nota: 'La madera la hacemos nosotros; la tapicería se elige con el cliente, tela y color. Los cojines salen y se lavan.'
+  },
+  {
+    id: 'dormitorio',
+    titulo: 'Dormitorio',
+    nota: 'Cabeceros de pared entera y mesitas a juego, hechos a la medida del hueco y del colchón que tengas.'
+  },
+  {
+    id: 'objetos',
+    titulo: 'Objetos de madera',
+    nota: 'Lo pequeño sale del recorte de las mesas: tablas, fuentes, cuencos. Se puede llevar en mano el mismo día.'
+  }
+];
 
 window.ARTICULOS = [
 
+  /* ---------------------------- MESAS ---------------------------- */
+
   {
     id: 'mesa-pieza-unica',
-    tipo: 'mesa',
+    categoria: 'mesas',
     nombre: 'Mesa de comedor de una sola pieza',
     madera: 'Tablón macizo',
     grosor: '60 mm',
@@ -33,7 +59,7 @@ window.ARTICULOS = [
 
   {
     id: 'mesa-base-hierro',
-    tipo: 'mesa',
+    categoria: 'mesas',
     nombre: 'Mesa de comedor con base de hierro',
     madera: 'Tablón macizo y hierro',
     grosor: '55 mm',
@@ -47,8 +73,23 @@ window.ARTICULOS = [
   },
 
   {
+    id: 'mesa-centro-canto-vivo',
+    categoria: 'mesas',
+    nombre: 'Mesa de centro de canto vivo',
+    madera: 'Tablón macizo y hierro',
+    grosor: '50 mm',
+    acabado: 'Aceite natural, hierro en negro mate',
+    texto: 'Una rodaja ancha del tronco, con el corazón y los anillos a la vista, sobre un pie de hierro en U que la deja como flotando. Baja, para delante del sofá.',
+    foto: 'img/mesa-centro-canto-vivo.jpg',
+    medidas: [
+      { etiqueta: '120 × 85 cm', precio: 760 },
+      { etiqueta: '140 × 90 cm', precio: 880 }
+    ]
+  },
+
+  {
     id: 'mesa-centro-tronco',
-    tipo: 'mesa',
+    categoria: 'mesas',
     nombre: 'Mesa de centro de tronco',
     madera: 'Cepa entera',
     grosor: 'Pieza maciza',
@@ -62,7 +103,7 @@ window.ARTICULOS = [
 
   {
     id: 'taburete-rodaja',
-    tipo: 'mesa',
+    categoria: 'mesas',
     nombre: 'Taburete de rodaja',
     madera: 'Rodaja de tronco y hierro',
     grosor: '70 mm',
@@ -75,15 +116,63 @@ window.ARTICULOS = [
     ]
   },
 
-  /* ---------------------------------------------------------
-     DE AQUÍ PARA ABAJO SON DE EJEMPLO, CON FOTO PROVISIONAL.
-     Cámbialas por lo pequeño que hagáis de verdad, o borra
-     el bloque entero si no hacéis nada de esto.
-     --------------------------------------------------------- */
+  /* -------------------------- ASIENTOS --------------------------- */
+
+  {
+    id: 'sofa-plataforma',
+    categoria: 'asientos',
+    nombre: 'Sofá de plataforma',
+    madera: 'Madera maciza',
+    grosor: 'Tarima de listones',
+    acabado: 'Aceite natural',
+    texto: 'La tarima vuela por los lados y hace de mesilla: ahí se deja el café sin necesidad de otro mueble. Los cojines son sueltos, con funda que sale para lavar.',
+    foto: 'img/sofa-plataforma.jpg',
+    medidas: [
+      { etiqueta: '240 × 90 cm, tres plazas', precio: 1450 },
+      { etiqueta: '300 × 90 cm, cuatro plazas', precio: 1790 }
+    ]
+  },
+
+  {
+    id: 'mecedora',
+    categoria: 'asientos',
+    nombre: 'Mecedora de patines',
+    madera: 'Madera maciza',
+    grosor: 'Patines de 70 mm',
+    acabado: 'Aceite natural',
+    texto: 'Patines anchos y macizos, respaldo de barrotes torneados y cojines sueltos. Se mece sin saltos y no muerde el suelo.',
+    foto: 'img/mecedora.jpg',
+    medidas: [
+      { etiqueta: '75 × 95 × 90 cm', precio: 520 }
+    ]
+  },
+
+  /* ------------------------- DORMITORIO -------------------------- */
+
+  {
+    id: 'cabecero-mesitas',
+    categoria: 'dormitorio',
+    nombre: 'Cabecero de pared con mesitas',
+    madera: 'Tablas macizas',
+    grosor: '30 mm',
+    acabado: 'Aceite natural',
+    texto: 'El cabecero coge la pared de lado a lado y las mesitas van colgadas de él, sin patas, así que debajo se barre de una pasada. Se hace a la medida de tu hueco.',
+    foto: 'img/cabecero.jpg',
+    medidas: [
+      { etiqueta: 'Hasta 220 cm de pared', precio: 890 },
+      { etiqueta: 'Hasta 300 cm de pared', precio: 1180 }
+    ]
+  },
+
+  /* ---------------------------------------------------------------
+     DE AQUÍ PARA ABAJO SON DE EJEMPLO, CON DIBUJO PROVISIONAL.
+     Cámbialas por lo pequeño que hagáis de verdad, o borra el
+     bloque entero si no hacéis nada de esto.
+     --------------------------------------------------------------- */
 
   {
     id: 'tabla-cortar',
-    tipo: 'objeto',
+    categoria: 'objetos',
     nombre: 'Tabla de cortar',
     madera: 'Recorte del mismo tablón',
     grosor: '30 mm',
@@ -97,7 +186,7 @@ window.ARTICULOS = [
 
   {
     id: 'cuenco-torneado',
-    tipo: 'objeto',
+    categoria: 'objetos',
     nombre: 'Cuenco torneado',
     madera: 'Maciza',
     grosor: '',
@@ -112,7 +201,7 @@ window.ARTICULOS = [
 
   {
     id: 'banco-recibidor',
-    tipo: 'objeto',
+    categoria: 'objetos',
     nombre: 'Banco de recibidor',
     madera: 'Tablón macizo y hierro',
     grosor: '40 mm',
@@ -127,7 +216,7 @@ window.ARTICULOS = [
 
   {
     id: 'estante-pared',
-    tipo: 'objeto',
+    categoria: 'objetos',
     nombre: 'Estante de pared',
     madera: 'Tablón macizo',
     grosor: '30 mm',
@@ -145,7 +234,9 @@ window.ARTICULOS = [
 /* ---- Las fotos de los trabajos que salen en la galería ---- */
 window.GALERIA = [
   { foto: 'img/mesa-comedor-pieza-unica.jpg', pie: 'Tablón de una pieza para diez, con base de madera en cruz' },
+  { foto: 'img/salon-conjunto.jpg', pie: 'Salón entero: sofá de plataforma, mecedora y mesa de centro' },
   { foto: 'img/mesa-comedor-hierro.jpg', pie: 'Canto vivo sobre estructura de hierro negro' },
+  { foto: 'img/cabecero.jpg', pie: 'Cabecero de pared con las mesitas colgadas' },
   { foto: 'img/mesa-centro-tronco.jpg', pie: 'Cepa entera con el hueco relleno de resina' },
   { foto: 'img/taburete-rodaja.jpg', pie: 'Rodaja de tronco con patas de hierro' }
 ];

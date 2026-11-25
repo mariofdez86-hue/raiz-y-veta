@@ -87,12 +87,25 @@
   }
 
   function pintarCatalogo() {
-    const mesas = ARTICULOS.filter((a) => a.tipo === 'mesa');
-    const objetos = ARTICULOS.filter((a) => a.tipo !== 'mesa');
-    const hMesas = $('#rejilla-mesas');
-    const hObjetos = $('#rejilla-objetos');
-    if (hMesas) hMesas.innerHTML = mesas.map(fichaPieza).join('');
-    if (hObjetos) hObjetos.innerHTML = objetos.map(fichaPieza).join('');
+    const sitio = $('#catalogo-secciones');
+    if (!sitio) return;
+
+    const cats = (window.CATEGORIAS && window.CATEGORIAS.length)
+      ? window.CATEGORIAS
+      : [{ id: 'mesas', titulo: 'Catálogo', nota: '' }];
+
+    // una sección por categoría; la que se quede sin piezas no sale
+    sitio.innerHTML = cats.map((c) => {
+      const suyas = ARTICULOS.filter((a) => (a.categoria || a.tipo) === c.id);
+      if (!suyas.length) return '';
+      return '<div class="bloque-catalogo" id="cat-' + esc(c.id) + '">' +
+        '<div class="rejilla-titulo">' +
+          '<h2>' + esc(c.titulo) + '</h2>' +
+          (c.nota ? '<p class="aviso-precio">' + esc(c.nota) + '</p>' : '<p></p>') +
+        '</div>' +
+        '<div class="piezas">' + suyas.map(fichaPieza).join('') + '</div>' +
+      '</div>';
+    }).join('');
 
     // el precio sigue a la medida elegida
     $$('select.medidas').forEach((sel) => {
