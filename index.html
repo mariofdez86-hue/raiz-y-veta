@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Raíz y Veta — Mesas de un solo tablón, con canto vivo</title>
-<meta name="description" content="Taller de madera artesanal: mesas de comedor de un solo tablón con canto vivo, mesas de centro de tronco, sofás, mecedoras y cabeceros. Base de madera o de hierro, a tu medida. Pide por WhatsApp.">
+<meta name="description" content="Taller de madera artesanal y carpintería a medida: mesas de un solo tablón con canto vivo, sofás, mecedoras, cabeceros, armarios vestidos y cocinas. Se reserva con el 20 %. Pide por WhatsApp.">
 <meta name="theme-color" content="#190f09">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Raíz y Veta — Mesas de un solo tablón, con canto vivo">
@@ -106,7 +106,19 @@
 <section class="apartado" id="catalogo">
   <div class="contenedor">
     <p class="cota cota-apartado"><span>en el taller ahora</span><i></i></p>
+    <p class="aviso-reserva">Aquí no hay stock: cada pieza se hace para quien la pide, con el tablón que se elige para ella. Por eso se aparta con el <b data-reserva>20 %</b> y el resto se paga cuando la mesa está en tu casa.</p>
     <div id="catalogo-secciones"></div>
+
+    <div class="bloque-pregunta">
+      <div>
+        <h2>¿Y si lo que buscas no está aquí?</h2>
+        <p class="entradilla" style="margin-top:.9rem">Esto es solo lo que más sale del taller, pero hacemos carpintería de todo tipo: vestimos armarios por dentro, cocinas a medida, puertas, encimeras, estanterías de pared entera, escaleras. Si lo tienes en la cabeza, pregúntalo y te digo si se puede, cuánto cuesta y para cuándo.</p>
+      </div>
+      <a class="btn btn-wa btn-grande" href="#" data-wa-texto="Hola, os escribo desde la web. Quería preguntaros por un trabajo de carpintería a medida:">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2m0 1.67c4.55 0 8.25 3.7 8.25 8.24 0 4.55-3.7 8.24-8.25 8.24-1.5 0-2.96-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.19-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.28-8.24m-3.6 4.1c-.17 0-.45.06-.69.31-.23.25-.9.88-.9 2.13s.92 2.47 1.04 2.64c.13.17 1.77 2.82 4.37 3.84 2.16.85 2.6.68 3.07.64.47-.04 1.5-.61 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.11-.23-.17-.47-.29-.25-.12-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.12-.17.26-.66.84-.81 1.01-.15.17-.3.19-.55.07-.25-.13-1.06-.39-2.02-1.25-.75-.66-1.26-1.49-1.4-1.74-.15-.25-.02-.39.1-.51.11-.12.25-.3.38-.45.12-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.12-.56-1.37-.77-1.87-.2-.47-.4-.41-.56-.41Z"/></svg>
+        Preguntar por WhatsApp
+      </a>
+    </div>
   </div>
 </section>
 
@@ -155,6 +167,7 @@
         <p class="entradilla" style="margin-top:1rem">Se hace. Cuéntame el hueco que tienes que llenar y te digo qué tablón hay en el taller para eso, cuánto cuesta y para cuándo está. Sin compromiso y sin letra pequeña.</p>
         <ul class="lista-pelada" style="margin-top:2rem">
           <li><b>Presupuesto en 48 horas</b><span>Con el precio cerrado por escrito, no «sobre unos mil euros».</span></li>
+          <li><b>Se reserva con el <span data-reserva>20 %</span></b><span>Es lo que cuesta apartar el tablón y empezar. El resto se paga al entregar, no antes.</span></li>
           <li><b>Plazo honrado</b><span>De tres a seis semanas según la pieza y la madera que haya seca.</span></li>
           <li><b>Entrega y montaje</b><span data-c="zona">Entrega y montaje en la provincia</span></li>
           <li><b>Se repara</b><span>Si dentro de unos años se marca o se afloja, vuelve al taller y se arregla.</span></li>
@@ -266,9 +279,10 @@
         <textarea id="notas-pedido" placeholder="Me corre prisa, vivo en un tercero sin ascensor, quiero el acabado más oscuro..."></textarea>
       </div>
       <p class="total"><span>Total orientativo</span><b id="total-carrito">0 €</b></p>
+      <p class="total total-reserva"><span>Para reservarlo, el <span data-reserva>20 %</span></span><b id="reserva-carrito">0 €</b></p>
       <button class="btn btn-wa btn-grande" id="enviar-pedido" disabled>Enviar el pedido por WhatsApp</button>
       <button class="quitar" id="vaciar-carrito" style="justify-self:start">Vaciar el pedido</button>
-      <p class="letra-chica">No se paga aquí. Se abre WhatsApp con el pedido escrito; en la conversación se cierra el precio final, el plazo y cómo pagar.</p>
+      <p class="letra-chica">No se paga aquí. Se abre WhatsApp con el pedido escrito y en la conversación se cierra el precio final y el plazo. Como cada pieza es única y a medida, solo se adelanta el <span data-reserva>20 %</span> para apartar la madera y ponerse con ella; el resto, al entregar.</p>
     </div>
   </div>
 </dialog>

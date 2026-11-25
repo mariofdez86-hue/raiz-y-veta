@@ -21,6 +21,19 @@ En ese mismo archivo están el nombre del negocio, la dirección del taller,
 el horario y los enlaces a Facebook o Instagram. Cambia lo de la derecha del
 `=` y guarda; no hace falta tocar nada más.
 
+### La reserva del 20 %
+
+También en `config.js`:
+
+```js
+reserva: 20,
+```
+
+Es el tanto por ciento que se adelanta para reservar la pieza. Cambias ese
+número y se actualiza solo en los tres sitios donde sale: el aviso de arriba
+del catálogo, el apartado de encargos a medida y el resumen del pedido, donde
+además se calcula la cantidad exacta sobre el total del carrito.
+
 ---
 
 ## 2. Poner tus fotos

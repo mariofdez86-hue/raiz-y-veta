@@ -352,7 +352,40 @@ p:last-child { margin-bottom: 0; }
   margin-top: 2.5rem;
 }
 
+.aviso-reserva {
+  border-left: 1px solid var(--roble);
+  padding-left: 1.1rem;
+  margin: -1.25rem 0 3rem;
+  max-width: 58ch;
+  color: var(--lino-bajo);
+}
+.aviso-reserva b {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.2em;
+  color: var(--roble-alto);
+}
+
 .bloque-catalogo + .bloque-catalogo { margin-top: clamp(3.5rem, 8vh, 6rem); }
+
+.bloque-pregunta {
+  margin-top: clamp(3.5rem, 8vh, 6rem);
+  background: var(--nogal-800);
+  border: 1px solid rgba(201, 148, 88, 0.22);
+  border-radius: 3px;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+.bloque-pregunta h2 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); }
+.bloque-pregunta .btn { white-space: nowrap; }
+
+@media (max-width: 860px) {
+  .bloque-pregunta { grid-template-columns: 1fr; }
+  .bloque-pregunta .btn { justify-self: start; }
+}
 
 .pieza { display: flex; flex-direction: column; }
 .pieza .foto {
@@ -651,6 +684,8 @@ dialog::backdrop { background: rgba(10, 6, 3, 0.68); backdrop-filter: blur(3px);
 }
 .total { display: flex; align-items: baseline; justify-content: space-between; }
 .total b { font-family: var(--serif); font-size: 1.9rem; font-weight: 500; color: var(--roble-alto); }
+.total-reserva { margin-top: -0.5rem; font-size: 0.86rem; color: var(--acero); }
+.total-reserva b { font-size: 1.2rem; color: var(--lino); }
 .letra-chica { font-size: 0.78rem; color: var(--acero); margin: 0; }
 
 /* ---------- Visor de fotos ---------- */

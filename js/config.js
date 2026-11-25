@@ -22,6 +22,11 @@ window.CONFIG = {
   zona:     'Entrega y montaje en la provincia',
   horario:  'Avisa antes por WhatsApp y te digo cuándo me pillas en el taller.',
 
+  // ---- Cómo se cobra ----
+  // Lo que se adelanta para reservar la pieza, en tanto por ciento.
+  // Cambia el número y se actualiza solo en toda la web.
+  reserva: 20,
+
   // ---- Redes (deja '' en las que no uses) ----
   facebook:  'https://www.facebook.com/share/1ZN5VJ84md/',
   instagram: '',

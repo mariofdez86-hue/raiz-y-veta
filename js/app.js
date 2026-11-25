@@ -27,6 +27,10 @@
 
   const pieza = (id) => ARTICULOS.find((a) => a.id === id);
 
+  // lo que se adelanta para reservar
+  const PORCENTAJE = Number(C.reserva) > 0 ? Number(C.reserva) : 20;
+  const senal = (importe) => Math.round((importe * PORCENTAJE) / 100);
+
   /* ---------------- Textos que vienen de config.js ---------------- */
 
   function rellenarDatos() {
@@ -40,6 +44,7 @@
     $$('[data-wa-texto]').forEach((el) => {
       el.href = enlaceWa(el.dataset.waTexto || C.saludoSuelto || 'Hola');
     });
+    $$('[data-reserva]').forEach((el) => { el.textContent = PORCENTAJE + ' %'; });
     const fb = $('#enlace-facebook');
     if (fb) { if (C.facebook) fb.href = C.facebook; else fb.remove(); }
     const ig = $('#enlace-instagram');
@@ -252,6 +257,7 @@
     }
 
     $('#total-carrito').textContent = euros(total());
+    $('#reserva-carrito').textContent = euros(senal(total()));
     $('#enviar-pedido').disabled = !carrito.length;
   }
 
@@ -269,6 +275,7 @@
       lineas.join('\n'),
       '',
       'Total orientativo: ' + euros(total()),
+      'Para reservarlo (' + PORCENTAJE + ' %): ' + euros(senal(total())),
       notas ? '\nNotas: ' + notas : '',
       '\n(Pedido hecho desde la web)'
     ].join('\n');
